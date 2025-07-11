@@ -15,7 +15,10 @@ app.use(userRoutes);
 app.use(express.static('uploads'));
 
 const start = async()=>{
-    const connectDB =await mongoose.connect("mongodb://localhost:27017/Linkedin")
+    const connectDB =await mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
     app.listen(5000, () => {
         console.log("Server is running on port 5000");
