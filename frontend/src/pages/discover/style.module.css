@@ -1,0 +1,49 @@
+.allUserProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.userCard {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;               /* ✅ restrict width */
+  max-width: 800px;         /* ✅ optional: max width */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.userCard:hover {
+  transform: translateY(-3px);
+}
+
+.profileImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.userUsername {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
