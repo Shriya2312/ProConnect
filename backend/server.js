@@ -14,15 +14,21 @@ app.use(postsRoutes);
 app.use(userRoutes);
 app.use(express.static('uploads'));
 
-const start = async()=>{
-    const connectDB =await mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error(`❌ MongoDB Connection Error: ${error.message}`);
+    process.exit(1); // Exit process if connection fails
+  }
 
     app.listen(5000, () => {
         console.log("Server is running on port 5000");
     });
 }
 
-start();
+connectDB();
