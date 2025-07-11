@@ -1,0 +1,55 @@
+POST http://localhost:5000/register HTTP/1.1 
+Content-Type: application/json
+
+
+{
+  "username": "Raj",
+  "password": "Password123",
+  "email": "raj@example.com",
+  "name": "raj verma"
+}
+
+
+###
+POST http://localhost:5000/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "neha@gmail.com",
+  "password": "password"
+}
+
+###
+http://localhost:5000/get_user_and_profile?token=55a600f5c036c49a96a3dc01309e1b9da9df64bb58073caa5da8b0db6ff27abe
+
+###
+POST http://localhost:5000/update_user_profile HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "6d7902177ddefec7c32ef4135b82b9134e7065decb4a4889e449f33aea447145",
+  "bio": "Experienced software developer with a passion for building scalable web applications and tech",
+  "currentPost": "Senior Software Engineer",
+  "pastWork": [
+    {
+      "company": "Tech Solutions",
+      "position": "Software Engineer",
+      "years": "2019-2021"
+    }
+  ],
+  "education": [
+    {
+      "school": "State University",
+      "degree": "MCA",
+      "fieldOfStudy": "2023-2025"
+    }
+  ]
+}
+
+###
+GET http://localhost:5000/get_all_users HTTP/1.1
+Content-Type: application/json
+
+
+###
+GET http://localhost:5000/allPosts
